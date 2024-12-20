@@ -784,7 +784,7 @@ void BenchmarkExecutor::runBenchmark(moveit_msgs::msg::MotionPlanRequest request
   for (const std::pair<const std::string, std::vector<std::string>>& pipeline_entry : pipeline_map)
     num_planners += pipeline_entry.second.size();
 
-  boost::progress_display progress(num_planners * runs, std::cout);
+  boost::timer::progress_display progress(num_planners * runs, std::cout);
 
   // Iterate through all planning pipelines
   for (const std::pair<const std::string, std::vector<std::string>>& pipeline_entry : pipeline_map)
