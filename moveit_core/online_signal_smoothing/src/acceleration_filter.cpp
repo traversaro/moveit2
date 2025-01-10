@@ -221,7 +221,7 @@ double jointLimitAccelerationScalingFactor(const Eigen::VectorXd& accelerations,
         const auto bounded_vel =
             std::clamp(target_accel, variable_bound.min_acceleration_, variable_bound.max_acceleration_);
         double joint_scaling_factor = bounded_vel / target_accel;
-        min_scaling_factor = std::min(min_scaling_factor, joint_scaling_factor);
+        min_scaling_factor = (std::min)(min_scaling_factor, joint_scaling_factor);
       }
       ++idx;
     }
