@@ -120,7 +120,7 @@ void URDFConfig::setPackageName()
 void URDFConfig::loadFromPackage(const std::filesystem::path& package_name, const std::filesystem::path& relative_path,
                                  const std::string& xacro_args)
 {
-  const std::filesystem::path package_path = getSharePath(package_name);
+  const std::filesystem::path package_path = getSharePath(package_name.string());
   if (package_path.empty())
   {
     throw std::runtime_error("URDF/COLLADA package not found: ''" + package_name.string());
