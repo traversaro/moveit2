@@ -34,6 +34,7 @@ set_target_properties(moveit_ros_benchmarks
 if(WIN32)
   set(EXTRA_LIB ws2_32.lib)
 endif()
+target_compile_features(moveit_ros_benchmarks PRIVATE cxx_std_20)
 ament_target_dependencies(moveit_ros_benchmarks ${THIS_PACKAGE_INCLUDE_DEPENDS})
 target_link_libraries(moveit_ros_benchmarks ${EXTRA_LIB})
 
